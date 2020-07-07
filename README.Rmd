@@ -24,14 +24,16 @@ Gene enrichment tests to perform adverse event (AE) enrichment analysis. Unlike 
 ## Installation
 
 If the devtools package is not yet installed, install it first:
+
 ```{r, eval=FALSE}
 install.packages('devtools')
-library(devtools)
 ```
 
+Then run: 
+
 ```{r, eval = FALSE}
-# install lcra from Github:
-install_github('umich-biostatistics/AEenrich') 
+# install AEenrich from Github:
+devtools::install_github('umich-biostatistics/AEenrich') 
 library(AEenrich)
 ```
 
