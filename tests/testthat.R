@@ -1,4 +1,4 @@
 library(testthat)
-library(enrichAE)
+library(AEenrich)
 
-test_check("enrichAE")
+test_check("AEenrich")

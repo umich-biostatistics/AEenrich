@@ -1,2 +1,10 @@
 
 export(enrich)
+importFrom(magrittr, `%>%`)
+importFrom("dplyr", "arrange", "coalesce", "desc", "distinct", "filter",
+           "mutate", "n", "summarise", "summarize", "transmute", "ungroup", 
+           "group_by")
+importFrom("qvalue", "qvalue")
+importFrom("stats", "complete.cases", "fisher.test", "ppois",
+               "rmultinom", "runif", "xtabs")
+importFrom("utils", "tail")
