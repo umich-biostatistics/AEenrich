@@ -20,11 +20,12 @@ Depends:
     R (>= 3.5.0)
 Imports: 
     dplyr, 
-    magrittr,
-    qvalue
+    magrittr
 URL: https://github.com/umich-biostatistics/AEenrich
 BugReports: https://github.com/umich-biostatistics/AEenrich/issues
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Suggests: 
     testthat
+biocViews:
+    qvalue
