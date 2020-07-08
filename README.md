@@ -33,6 +33,13 @@ library(AEenrich)
 
 ## Example usage
 
+For documentation pages:
+
+``` r
+?AEenrich
+?enrich
+```
+
 ### Quick example:
 
 ``` r

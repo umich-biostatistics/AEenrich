@@ -39,6 +39,13 @@ library(AEenrich)
 
 ## Example usage
 
+For documentation pages:
+
+```{r, eval = FALSE}
+?AEenrich
+?enrich
+```
+
 ### Quick example: 
 
 ```{r, eval = FALSE}
