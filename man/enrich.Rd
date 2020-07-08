@@ -43,6 +43,8 @@ of AEs when using aefisher enrichment (method="aefisher").}
 
 \item{or.cut}{a numerical value specifying the significance cut for odds ratio
 of AEs when using aefisher enrichment (method="aefisher").}
+
+\item{seed}{set a numeric seed for reproducible analysis.}
 }
 \value{
 A list with
@@ -85,6 +87,5 @@ fisher_result2 = enrich(df = flu2, dd.group = group, drug.case = drug.case,
 }
 \references{
 Li, S. and Zhao, L. (2020). Adverse event enrichment tests using
-VAERS. arXiv:2007.02266 \link{stat}. \link{online} Available at:
-https://arxiv.org/abs/2007.02266 \link{Accessed 7 Jul. 2020}.
+VAERS. \href{https://arxiv.org/abs/2007.02266}{arXiv:2007.02266}.
 }

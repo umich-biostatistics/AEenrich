@@ -62,5 +62,4 @@ fisher_result2 = enrich(df = flu2, dd.group = group, drug.case = drug.case,
 ### Current Suggested Citation
 
 Li, S. and Zhao, L. (2020). Adverse event enrichment tests using VAERS.
-arXiv:2007.02266 stat. online Available at:
-<https://arxiv.org/abs/2007.02266> Accessed 7 Jul. 2020.
+[arXiv:2007.02266](https://arxiv.org/abs/2007.02266).
