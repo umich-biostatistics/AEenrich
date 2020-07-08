@@ -10,12 +10,12 @@
 #' 
 #' @param df a data.frame with 3 columns. Two types are acceptable. One is with 
 #' three columns corresponding to ID, Drug type and AE name. The other one is 
-#' three columns with Vaccine type, AE name and Count. The order matters. Either 
+#' three columns with drug type, AE name and Count. The order matters. Either 
 #' order the columns ID, Drug type, AE name or Drug type, AE name, Count.
 #' @param dd.group a data.frame with first column AE name and second column Group 
 #' name. This data.frame provides the group for which each AE belongs.
-#' @param drug.case a character string of target vaccine type.
-#' @param drug.control a character string of reference vaccine type. If NULL(default),
+#' @param drug.case a character string of target drug type.
+#' @param drug.control a character string of reference drug type. If NULL(default),
 #' all other types shown in the data are reference.
 #' @param method a character string specifying the method for the enrichment test. 
 #' It must be "aeks" (default) or "aefisher"; "aeks" means the rank-based 
@@ -32,10 +32,28 @@
 #' @references Li, S. and Zhao, L. (2020). Adverse event enrichment tests using 
 #' VAERS. \href{https://arxiv.org/abs/2007.02266}{arXiv:2007.02266}.
 #' 
-#' @return A list with 
+#' @return A list containing 2 data.frames named **Final_result** and **AE_info**.
+#' 
+#' The **Final_result** data.frame contains the following columns: 
 #' \itemize{
-#'   \item{Final_result: }{data.frame with GROUP_NAME, ES, p_value, and GROUP_SIZE}
-#'   \item{AE_info: }{data.frame with AE_name, Ratio, and p_value}
+#'   \item{GROUP_NAME: }{AE group names}
+#'   \item{ES: }{enrichment score}
+#'   \item{p_value: }{p value of the enrichment score}
+#'   \item{GROUP_SIZE: }{group size of each AE group} 
+#' }
+#' 
+#' The **AE_info** for 'aeks' contains the following columns:
+#' \itemize{
+#'   \item{AE_NAME: }{AE names}
+#'   \item{Ratio: }{the estimate of reporting rate, which is the MLE of lambda in Possion distribution in formula (1)}
+#'   \item{p_value: }{p value of Ratio estimate for each AE under NULL hypothesis}
+#' }
+#' 
+#' The **AE_info** for 'aefisher' contains the following columns: 
+#' \itemize{
+#'   \item{AE_NAME: }{AE names}
+#'   \item{OR: }{Odds ratio of fisher's exact test for contingency table between AE and drug}
+#'   \item{p_value: }{p value of fisher's exact test for contingency table between AE and drug}
 #' }
 #' 
 #' @examples 
