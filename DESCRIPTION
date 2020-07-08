@@ -20,9 +20,9 @@ Depends:
     R (>= 3.5.0)
 Imports: 
     dplyr, 
-    magrittr
-biocViews:
+    magrittr,
     qvalue
+biocViews:
 URL: https://github.com/umich-biostatistics/AEenrich
 BugReports: https://github.com/umich-biostatistics/AEenrich/issues
 RoxygenNote: 7.1.1
