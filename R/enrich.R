@@ -83,7 +83,6 @@
 enrich = function(df, dd.group, drug.case, drug.control = NULL, method = 'aeks',  
                     n_iter = 1000, q.cut = 0.1, or.cut = 1.5, seed = NULL) {
   if(!is.null(seed)) { set.seed(seed) }
-  else { set.seed(floor(runif(1, 1, 1000))) }
   names(dd.group) = c('AE_NAME', 'GROUP_NAME')
   if (method == 'aeks'){
     KS_result = KS_enrichment(df, dd.group, drug.case, drug.control, n_iter = n_iter)
