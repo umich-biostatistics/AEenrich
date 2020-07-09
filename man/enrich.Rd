@@ -72,8 +72,7 @@ The \strong{AE_info} for 'aefisher' contains the following columns:
 }
 }
 \description{
-Gene enrichment tests to perform adverse
-event (AE) enrichment analysis. Unlike the continuous gene expression data, AE
+Adverse event (AE) enrichment analysis. Unlike the continuous gene expression data, AE
 data are counts. Therefore, AE data has many zeros and ties. We propose two
 enrichment tests. One is a modified Fisher's exact test based on pre-selected
 significant AEs, while the other is based on a modified Kolmogorov-Smirnov
