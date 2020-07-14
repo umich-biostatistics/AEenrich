@@ -9,8 +9,8 @@
 Adverse event (AE) enrichment
 analysis. Unlike the continuous gene expression data, AE data are counts.
 Therefore, AE data has many zeros and ties. We propose two enrichment tests.
-One is a modified Fisher's exact test based on pre-selected significant AEs,
-while the other is based on a modified Kolmogorov-Smirnov statistic.
+AEFisher is a modified Fisher's exact test based on pre-selected significant AEs,
+while AEKS is based on a modified Kolmogorov-Smirnov statistic.
 
 Use the function \code{enrich} to fit models and inspect results.
 

@@ -11,22 +11,22 @@
 #' ID, Drug type and AE name. The other type (data type II) consists of aggregated data, including
 #' drug type, AE name and Count. Data should be ordered as 
 #' ID, Drug type, AE name in data type I and Drug type, AE name, Count in data type II.
-#' @param dd.group is a data.frame with AE name and Group 
+#' @param dd.group a data.frame with AE name and Group 
 #' name. This data.frame have the group information for each individual AE.
-#' @param drug.case is a character string for the target drug of interest.
-#' @param drug.control is a character string for the reference drug. If NULL(default),
+#' @param drug.case a character string for the target drug of interest.
+#' @param drug.control a character string for the reference drug. If NULL(default),
 #' all other drugs combined are the reference.
-#' @param method is a character string specifying the method for the enrichment test. 
+#' @param method a character string specifying the method for the enrichment test. 
 #' It must take "aeks" (default) or "aefisher"; "aeks" is the rank-based 
 #' enrichment test, and "aefisher" is the modified Fisher enrichment test. See
 #' details described in the paper (see reference section of this document). 
-#' @param n_iter is an integer value specifying the number of iterations in aeks 
+#' @param n_iter an integer value specifying the number of iterations in aeks 
 #' method or the number of permutations in aefisher.
-#' @param q.cut is a numerical value specifying the significance cut for q value 
+#' @param q.cut a numerical value specifying the significance cut for q value 
 #' of AEs in aefisher.
 #' @param or.cut a numerical value specifying the significance cut for odds ratio 
 #' of AEs in aefisher.
-#' @param seed sets a numeric seed for reproducible analysis.
+#' @param seed a numeric seed for reproducible analysis.
 #' 
 #' @references Li, S. and Zhao, L. (2020). Adverse event enrichment tests using 
 #' VAERS. \href{https://arxiv.org/abs/2007.02266}{arXiv:2007.02266}.
