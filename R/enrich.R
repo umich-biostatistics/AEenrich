@@ -63,8 +63,9 @@
 #' # AEKS
 #' ## Input data using data Type I
 #' KS_result1 = enrich(df = flu1, dd.group = group, drug.case = drug.case, 
-#'                     drug.control = drug.control, method = 'aeks', n_iter = 1000)
+#'                     drug.control = drug.control, method = 'aeks', n_iter = 10)
 #' ## Input data using data Type II
+#' \donttest{
 #' KS_result2 = enrich(df = flu2, dd.group = group, drug.case = drug.case, 
 #'                     drug.control = drug.control, method = 'aeks', n_iter = 1000)
 #' 
@@ -72,6 +73,8 @@
 #' fisher_result1 = enrich(df = flu1, dd.group = group, drug.case = drug.case, 
 #'                         drug.control = drug.control, method = 'aefisher', 
 #'                         n_iter = 1000, q.cut = 0.1, or.cut=1.5)
+#' }
+
 
 
 enrich = function(df, dd.group, drug.case, drug.control = NULL, method = 'aeks',  
