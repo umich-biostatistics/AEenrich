@@ -27,6 +27,8 @@
 #' @param or.cut a numerical value specifying the significance cut for odds ratio 
 #' of AEs in aefisher.
 #' @param seed a numeric seed for reproducible analysis.
+#' @param verbose logical, if TRUE, print iterations. If FALSE, silence printing
+#' to the console. Default is verbose = FALSE.
 #' 
 #' @references Li, S. and Zhao, L. (2020). Adverse event enrichment tests using 
 #' VAERS. \href{https://arxiv.org/abs/2007.02266}{arXiv:2007.02266}.
@@ -78,15 +80,18 @@
 
 
 enrich = function(df, dd.group, drug.case, drug.control = NULL, method = 'aeks',  
-                    n_iter = 1000, q.cut = 0.1, or.cut = 1.5, seed = NULL) {
+                    n_iter = 1000, q.cut = 0.1, or.cut = 1.5, seed = NULL, 
+                    verbose = FALSE) {
   if(!is.null(seed)) { set.seed(seed) }
   names(dd.group) = c('AE_NAME', 'GROUP_NAME')
   if (method == 'aeks'){
-    KS_result = KS_enrichment(df, dd.group, drug.case, drug.control, n_iter = n_iter)
+    KS_result = KS_enrichment(df, dd.group, drug.case, drug.control, n_iter = n_iter, 
+                              verbose = verbose)
     return(KS_result)
   }else if (method == 'aefisher'){
     fisher_result = Fisher_enrichment(df, dd.group, drug.case, drug.control, 
-                                      n_iter = n_iter, q.cut = q.cut, or.cut = or.cut)
+                                      n_iter = n_iter, q.cut = q.cut, or.cut = or.cut, 
+                                      verbose = verbose)
     return(fisher_result)
   }else{
     stop('Please choose one of two methods: aeks or fisher')

@@ -38,7 +38,8 @@
 ###                                    Abdominal pain     0        1       
 #---------------------------------------------------------------------------------------------------------------
 
-Fisher_enrichment = function(df,dd.group,drug.case,drug.control=NULL,n_iter = 1000,q.cut=0.05,or.cut=1.5){
+Fisher_enrichment = function(df,dd.group,drug.case,drug.control=NULL,n_iter = 1000,q.cut=0.05,or.cut=1.5, 
+                             verbose){
   # Get reporting rate estimate and related info for null simulation
   fisher_res = fisher_eachAE(df,drug.case,drug.control)
   fisher_res_withQ = fisher_res %>% mutate(qval = (qvalue(p_value))$qvalue)
@@ -46,7 +47,8 @@ Fisher_enrichment = function(df,dd.group,drug.case,drug.control=NULL,n_iter = 10
   dd.group=dd.group[!duplicated(dd.group),] %>% filter(!is.na(GROUP_NAME))
   df_size = dd.group %>%  group_by(GROUP_NAME) %>% summarise(GROUP_SIZE=n()) %>% ungroup()
   # Calculate the Enrichment Score for each group
-  fisher_result = fisher_test(dd.group,fisher_res_withQ,q.cut,or.cut,n_iter)
+  fisher_result = fisher_test(dd.group,fisher_res_withQ,q.cut,or.cut,n_iter, 
+                              verbose = verbose)
   
   Final_result_fisher = fisher_result %>% merge(df_size, by = 'GROUP_NAME') 
   return(list(Final_result=Final_result_fisher, AE_info=fisher_res[,1:3]))

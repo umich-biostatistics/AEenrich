@@ -31,7 +31,7 @@
 ###         5                     Angioedema and urticaria  0       1          
 ###         6               Anxiety disorders and symptoms  0       1         
 #---------------------------------------------------------------------------------------------------------------
-fisher_test<-function(dd.group, fisher_res, q.cut, or.cut, n_iter){
+fisher_test<-function(dd.group, fisher_res, q.cut, or.cut, n_iter, verbose){
   
   
   # add statistics for AE not mentioned with the target vaccine. (OR=0,q=1, isRatio0=TRUE)
@@ -89,7 +89,7 @@ fisher_test<-function(dd.group, fisher_res, q.cut, or.cut, n_iter){
   for (perm in 1:n_iter){
     # display the processing 
     if ( (perm %% floor(n_iter/10)) == 0){
-      cat(sprintf('Iteration Processing: %4.2f Percent \n', perm/n_iter*100))
+      if(verbose == TRUE) { cat(sprintf('Iteration Processing: %4.2f Percent \n', perm/n_iter*100)) }
     }
     # use permutation to construct null data.frame
     ind = sample(nrow(ddF_new))

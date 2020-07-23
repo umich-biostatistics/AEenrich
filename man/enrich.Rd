@@ -13,7 +13,8 @@ enrich(
   n_iter = 1000,
   q.cut = 0.1,
   or.cut = 1.5,
-  seed = NULL
+  seed = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -45,6 +46,9 @@ of AEs in aefisher.}
 of AEs in aefisher.}
 
 \item{seed}{a numeric seed for reproducible analysis.}
+
+\item{verbose}{logical, if TRUE, print iterations. If FALSE, silence printing
+to the console. Default is verbose = FALSE.}
 }
 \value{
 A list containing 2 data.frames named \strong{Final_result} and \strong{AE_info}.

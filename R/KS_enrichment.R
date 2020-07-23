@@ -40,7 +40,8 @@
 ###                                 6 Abdominal pain lower 0.25    0.216
 #---------------------------------------------------------------------------------------------------------------
 #example: KS_enrichment(df = flu1, dd.group = group, drug.case = 'FLU')
-KS_enrichment = function(df, dd.group, drug.case, drug.control=NULL, n_iter = 1000){
+KS_enrichment = function(df, dd.group, drug.case, drug.control=NULL, n_iter = 1000, 
+                         verbose){
   # Get reporting rate estimate and related info for null simulation
   Ratio_result = get_ratio(df,drug.case,drug.control)
   Ratio = Ratio_result$Ratio
@@ -61,7 +62,7 @@ KS_enrichment = function(df, dd.group, drug.case, drug.control=NULL, n_iter = 10
   for ( i in 1:n_iter){
     # display the processing 
     if ( (i %% floor(n_iter/10)) == 0){
-      cat(sprintf('Iteration Processing: %4.2f Percent \n', i/n_iter*100))
+      if(verbose == TRUE) { cat(sprintf('Iteration Processing: %4.2f Percent \n', i/n_iter*100)) }
     }
     # simulate the data based on the null reporting rate and Poisson structure  
     data_null = data_info %>% mutate(Freq=Freq[,i])
