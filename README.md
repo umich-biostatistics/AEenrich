@@ -5,16 +5,33 @@
 
 [![](https://img.shields.io/badge/devel%20version-1.0.0-blue.svg)](https://github.com/umich-biostatistics/AEenrich)
 [![](https://img.shields.io/github/languages/code-size/umich-biostatistics/AEenrich.svg)](https://github.com/umich-biostatistics/AEenrich)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/AEenrich?color=blue)](https://cran.r-project.org/package=AEenrich)
+[![](http://cranlogs.r-pkg.org/badges/last-month/AEenrich?color=green)](https://cran.r-project.org/package=AEenrich)
+[![](https://img.shields.io/badge/Read%20on-arXiv-orange.svg)](https://arxiv.org/abs/2007.02266)
+[![CRAN
+checks](https://cranchecks.info/badges/summary/AEenrich)](https://cran.r-project.org/web/checks/check_results_AEenrich.html)
 
 ## Overview
 
-Adverse event (AE) enrichment analysis. Unlike the continuous gene
+Adverse event (AE) enrichment analysis. Unlike continuous gene
 expression data, AE data are counts. Therefore, AE data has many zeros
-and ties. We propose two enrichment tests. One is a modified Fisher’s
-exact test based on pre-selected significant AEs, while the other is
-based on a modified Kolmogorov-Smirnov statistic.
+and ties. We propose two enrichment tests, AEFisher is a modified
+Fisher’s exact test based on pre-selected significant AEs, while AEKS
+is based on a modified Kolmogorov-Smirnov statistic.
 
-## Installation
+## Install from CRAN
+
+``` r
+install.packages("AEenrich")
+```
+
+Then, load the package with
+
+``` r
+library(AEenrich)
+```
+
+## Install from Github
 
 If the devtools package is not yet installed, install it first:
 

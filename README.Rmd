@@ -14,14 +14,30 @@ knitr::opts_chunk$set(
 
 # R package `AEenrich`
 
-`r badger::badge_devel("umich-biostatistics/AEenrich", "blue")` `r badger::badge_code_size("umich-biostatistics/AEenrich")`
-
+`r badger::badge_devel("umich-biostatistics/AEenrich", "blue")` 
+`r badger::badge_code_size("umich-biostatistics/AEenrich")` 
+`r badger::badge_cran_download("AEenrich", "grand-total", "blue")` 
+`r badger::badge_cran_download("AEenrich", "last-month", "green")`
+`r badger::badge_custom("Read on", "arXiv", "orange", "https://arxiv.org/abs/2007.02266")`
+`r badger::badge_cran_checks("AEenrich")`
 
 ## Overview
 
 Adverse event (AE) enrichment analysis. Unlike continuous gene expression data, AE data are counts. Therefore, AE data has many zeros and ties. We propose two enrichment tests, AEFisher is a modified Fisher's exact test based on pre-selected significant AEs, while AEKS is based on a modified Kolmogorov-Smirnov statistic.
 
-## Installation
+## Install from CRAN
+
+```{r, eval = FALSE}
+install.packages("AEenrich")
+```
+
+Then, load the package with
+
+```{r, eval = FALSE}
+library(AEenrich)
+```
+
+## Install from Github
 
 If the devtools package is not yet installed, install it first:
 
