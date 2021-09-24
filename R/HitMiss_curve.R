@@ -36,7 +36,7 @@ HitMiss_Curve = function(ddF, miss_ind, p){
   n_pos = length(position)
   
   # The sum of modified correlation metric(odds ratio here)
-  # reduces to the standard Kolmogorov¨CSmirnov statistic when p = 0
+  # reduces to the standard Kolmogorov-Smirnov statistic when p = 0
   N_R = ddF_temp %>%
     filter(hit == TRUE) %>%
     mutate(OR_p = abs(OR)^p) %>%
