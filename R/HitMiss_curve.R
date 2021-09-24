@@ -1,31 +1,65 @@
-
-#------------------------------------------------------------------------------------------------------------------
-##------ HitMiss_Curve function: calculate miss and hit value in the KS method(considering ties) (called by get_ES function)
+## Function HitMiss_Curve: ----------------------------------------------------
+## Calculate miss and hit value in the KS method(considering ties),  called by
+## get_ES function.
 ###
 ###  Input: 
-###       position (vector): the index of end of each tied group
-###                 eg. if the value is 11112233334, the position should be 4 6 10 11
-###       hit_ind (vector): if hit, 1; Otherwise, 0
-###       miss_ind (vector): if miss, 1; Otherwise, 0
+###     1. ddF: a data frame
+###         AE_NAME                 OR      GROUP_NAME                     
+###           <chr>               <dbl>     <chr>                          
+###         Dysgeusia              5.30     Tongue conditions              
+###         ...                    ...      ...
+###         Tongue disorder        4.15     Tongue conditions              
+###         Paraesthesia oral      4.09     Oral soft tissue conditions    
+###         Paraesthesia oral      4.09     Neurological disorders NEC  
+###
+###     2. miss_ind (vector): if miss, 1; Otherwise, 0
+###     3. p: An exponent p to control the weight of the step.
 ###
 ###  Output:
-###       a list with two vectors: P_hit and P_miss
-#---------------------------------------------------------------------------------------------------------------
-HitMiss_Curve = function(position, hit_ind, miss_ind){
-  # different positions 
+###     a list with three vectors: P_hit, P_miss and position
+# 79: -------------------------------------------------------------------------
+HitMiss_Curve = function(ddF, miss_ind, p){
+  
+  # create hit index based on the miss index.
+  # This is to avoid multiple selections of a certain AE which corresponds to
+  # multiple groups.
+  ddF_temp = ddF %>%
+    mutate(miss = miss_ind) %>%
+    mutate(hit = ifelse(miss_ind == TRUE, FALSE, TRUE)) %>%
+    select(AE_NAME, OR, hit, miss) %>%
+    distinct()
+  # found distinct positions 
+  position = sapply(unique(ddF_temp$OR),
+                    function(x) tail(which(ddF_temp$OR == x), n = 1),
+                    simplify = T)
+  # number of different positions 
   n_pos = length(position)
   
-  N_hit = sum(hit_ind)
-  N_miss = sum(miss_ind)
-  if (N_hit == 0){
-    hit_value = rep(0,n_pos)
+  # The sum of modified correlation metric(odds ratio here)
+  # reduces to the standard Kolmogorov¨CSmirnov statistic when p = 0
+  N_R = ddF_temp %>%
+    filter(hit == TRUE) %>%
+    mutate(OR_p = abs(OR)^p) %>%
+    summarize(Nr = sum(OR_p)) %>%
+    as.numeric()
+  ## Number of miss hits
+  N_miss = ddF_temp %>%
+    summarize(N_M = sum(miss_ind)) %>%
+    as.numeric()
+  
+  if (N_R == 0){
+    hit_value = rep(0, n_pos)
   }else{
-    hit_value = cumsum(hit_ind/N_hit)
+    if(p == 0){
+      hit_value = cumsum(ddF_temp$hit / N_R)
+      hit_value = hit_value[position]
+    } else{
+    OR_hit = ddF_temp %>%
+      mutate(OR_p = abs(OR)^p * hit)
+    hit_value = cumsum(OR_hit$OR_p / N_R)
     hit_value = hit_value[position]
-    #hit_value = cumsum(sapply(position, function(x) sum(which(hit_ind) %in% x)/N_hit))
-  }
-  miss_value = cumsum(miss_ind/N_miss)
+    } }
+  miss_value = cumsum(ddF_temp$miss / N_miss)
   miss_value = miss_value[position]
-  #miss_value = cumsum(sapply(position, function(x) sum(which(miss_ind) %in% x)/N_miss))
-  return(list(hit=hit_value, miss=miss_value))
+  return(list(hit = hit_value, miss = miss_value, pos = position))
 }

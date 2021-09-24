@@ -3,8 +3,14 @@ export(enrich)
 importFrom(magrittr, `%>%`)
 importFrom("dplyr", "arrange", "coalesce", "desc", "distinct", "filter",
            "mutate", "n", "summarise", "summarize", "transmute", "ungroup", 
-           "group_by")
+           "group_by", "as_tibble", "all_of", "select", "mutate_if", "bind_rows", 
+           "bind_cols", "group_by_at", "relocate", "tibble", "right_join", "left_join")
 importFrom("qvalue", "qvalue")
 importFrom("stats", "complete.cases", "fisher.test", "ppois",
-               "rmultinom", "runif", "xtabs")
+               "rmultinom", "runif", "xtabs", "glm", "as.formula", "coef",
+	"confint.default")
+importFrom("parallel", "makeCluster", "stopCluster")
+importFrom("doParallel", "registerDoParallel")
+importFrom("foreach", "foreach")
 importFrom("utils", "tail")
+importFrom("tidyr", "pivot_wider")

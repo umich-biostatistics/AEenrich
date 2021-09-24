@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-Adverse event (AE) enrichment analysis. Unlike continuous gene expression data, AE data are counts. Therefore, AE data has many zeros and ties. We propose two enrichment tests, AEFisher is a modified Fisher's exact test based on pre-selected significant AEs, while AEKS is based on a modified Kolmogorov-Smirnov statistic.
+Perform Adverse Event Enrichment Tests. The enrich function is used to perform Adverse event (AE) enrichment analysis. Unlike the continuous gene expression data, AE data are counts. Therefore, AE data has many zeros and ties. We propose two enrichment tests. AEFisher is a modified Fisher's exact test based on pre-selected significant AEs, while AEKS is based on a modified Kolmogorov-Smirnov statistic.
 
 ## Install from CRAN
 
@@ -60,35 +60,43 @@ For documentation pages:
 ```{r, eval = FALSE}
 ?AEenrich
 ?enrich
+?count_cases
 ```
 
 ### Quick example: 
 
 ```{r, eval = FALSE}
-##---Experiment 1 
-drug.case = 'FLUN'
-drug.control = 'FLU'
-
 # AEKS
-## Data Type 1
-KS_result1 = enrich(df = flu1, dd.group = group, drug.case = drug.case, 
-                    drug.control = drug.control, method = 'aeks', n_iter = 1000)
-## Data Type 2
-KS_result2 = enrich(df = flu2, dd.group = group, drug.case = drug.case, 
-                    drug.control = drug.control, method = 'aeks', n_iter = 1000)
+## Type I data: data on report level
+enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aeks",
+       n_perms = 1000, drug.case = "COVID19", dd.group = group_info,
+       drug.control = "OTHER", min_size = 5, min_AE = 10, zero = FALSE)
+## Type II data: aggregated data
+enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aeks",
+       n_perms = 1000, drug.case = "DrugYes", dd.group = group_info,
+       drug.control = "DrugNo", min_size = 5, min_AE = 10)
+# AEFISHER
+## Type I data: data on report level
+enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
+       n_perms = 1000, drug.case = "COVID19", dd.group = group_info,
+       drug.control = "OTHER", min_size = 5, min_AE = 10, q.cut = 0.05, 
+       or.cut = 1.5, cores = 8)
+## Type II data: aggregated data
+enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
+       n_perms = 1000, drug.case = "DrugYes", dd.group = group_info,
+       drug.control = "DrugNo", min_size = 5, min_AE = 10)
 
-# AEFisher
-## Data Type 1
-fisher_result1 = enrich(df = flu1, dd.group = group, drug.case = drug.case, 
-                        drug.control = drug.control, method = 'aefisher', 
-                        n_iter = 1000, q.cut = 0.1, or.cut=1.5)
-## Data Type 2
-fisher_result2 = enrich(df = flu2, dd.group = group, drug.case = drug.case, 
-                        drug.control = drug.control, method = 'aefisher', 
-                        n_iter = 1000, q.cut = 0.1, or.cut=1.5)
+## Convert type I data to type II data
+count_cases (data = covid1, drug.case = "COVID19", drug.control = "OTHER",
+             covar_cont = c("AGE"), covar_disc = c("SEX"),
+             breaks = list(c(16,30,50,65,120)))
+
 ```
 
 ### Current Suggested Citation
 
-Li, S. and Zhao, L. (2020). Adverse event enrichment tests using VAERS. [arXiv:2007.02266](https://arxiv.org/abs/2007.02266).
+1. Li, S. and Zhao, L. (2020). Adverse event enrichment tests using VAERS. [arXiv:2007.02266](https://arxiv.org/abs/2007.02266).
 
+2. Subramanian, A.e.a. (2005). Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc Natl Acad Sci U S A. Proceedings of the National Academy of Sciences. 102. 15545-15550. 
+
+3. Tian, Lu & Greenberg, Steven & Kong, Sek Won & Altschuler, Josiah & Kohane, Isaac & Park, Peter. (2005). Discovering statistically significant pathways in expression profiling studies. Proceedings of the National Academy of Sciences of the United States of America. 102. 13544-9. 10.1073/pnas.0506577102. 
