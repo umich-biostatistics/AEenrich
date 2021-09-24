@@ -5,7 +5,7 @@
 \alias{group}
 \title{Group Structure Data}
 \format{
-An object of class \code{data.frame} with 434 rows and 2 columns.
+An object of class \code{NULL} of length 0.
 }
 \usage{
 group
