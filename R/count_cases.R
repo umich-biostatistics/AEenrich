@@ -15,7 +15,7 @@
 #' length as covar_cont. Given a vector of non-decreasing breakpoints in breaks[i],
 #' find the interval containing each element of covar_cont[i]; i.e., for each index
 #' j in breaks[i], value j is assigned to covar_cont[i] if and only if breaks[i][j]
-#' ??? covar_cont[i] < breaks[i][j+1].
+#' <= covar_cont[i] < breaks[i][j+1].
 #' @param min_AE the minimum number of cases required to start counting
 #' for a specific AE. Default 10.
 #' @param cores the number of cores to use for parallel execution.
