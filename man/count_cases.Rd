@@ -2,7 +2,7 @@
 % Please edit documentation in R/count_cases.R
 \name{count_cases}
 \alias{count_cases}
-\title{The Count_cases function is used to convert data on the report level to
+\title{The count_cases function is used to convert data on the report level to
 aggregated data, grouping by specified covariates.}
 \usage{
 count_cases(
@@ -55,11 +55,14 @@ The returned data.frame contains the following columns:
 }
 }
 \description{
-The Count_cases function is used to convert data on the report level to
+The count_cases function is used to convert data on the report level to
 aggregated data, grouping by specified covariates.
 }
 \examples{
-count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
-            covar_cont = c("AGE"), covar_disc = c("SEX"),
-            breaks = list(c(16,30,50,65,120)))
+
+
+# count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
+#             covar_cont = c("AGE"), covar_disc = c("SEX"),
+#             breaks = list(c(16,30,50,65,120)))
+            
 }
