@@ -21,14 +21,17 @@ LazyData: true
 Biarch: true
 Depends: 
     R (>= 3.5.0)
-Imports:
-    dplyr, 
+Imports: 
+    dplyr,
     magrittr,
     qvalue,
     doParallel,
     tidyr,
-    modelr
-biocViews:
+    modelr,
+    foreach,
+    rlang,
+    utils
+biocViews: 
 URL: https://github.com/umich-biostatistics/AEenrich
 BugReports: https://github.com/umich-biostatistics/AEenrich/issues
 RoxygenNote: 7.1.1

@@ -4,13 +4,16 @@ importFrom(magrittr, `%>%`)
 importFrom("dplyr", "arrange", "coalesce", "desc", "distinct", "filter",
            "mutate", "n", "summarise", "summarize", "transmute", "ungroup", 
            "group_by", "as_tibble", "all_of", "select", "mutate_if", "bind_rows", 
-           "bind_cols", "group_by_at", "relocate", "tibble", "right_join", "left_join")
+           "bind_cols", "group_by_at", "relocate", "tibble", "right_join", "left_join",
+           "mutate_at")
 importFrom("qvalue", "qvalue")
 importFrom("stats", "complete.cases", "fisher.test", "ppois",
                "rmultinom", "runif", "xtabs", "glm", "as.formula", "coef",
 	"confint.default")
-importFrom("parallel", "makeCluster", "stopCluster")
+importFrom("parallel", "makeCluster", "stopCluster", "detectCores")
 importFrom("doParallel", "registerDoParallel")
-importFrom("foreach", "foreach")
+importFrom("foreach", "foreach", "%dopar%")
 importFrom("utils", "tail")
-importFrom("tidyr", "pivot_wider")
+importFrom("tidyr", "pivot_wider", "replace_na")
+importFrom("rlang", ":=")
+importFrom("stats", "binomial")
