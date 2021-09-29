@@ -38,6 +38,7 @@ fisher_test = function(dd.group, fisher_res, q.cut, or.cut, n_perms,
                        zero = FALSE){
   # add statistics for AE not mentioned with the target vaccine.
   # (OR = 0, q = 1, isRatio0 = TRUE)
+  . <- "Muted"
   ddF = fisher_res %>%
     right_join(dd.group, by = "AE_NAME") %>%
     mutate(OR = coalesce(OR, 0),

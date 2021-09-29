@@ -1,5 +1,5 @@
 
-#' The Count_cases function is used to convert data on the report level to
+#' The count_cases function is used to convert data on the report level to
 #' aggregated data, grouping by specified covariates.
 #' 
 #' @param data a data.frame with at least 3 columns, consisting data on the report
@@ -32,15 +32,17 @@
 #' }
 #' 
 #' @examples
-#' count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
-#'             covar_cont = c("AGE"), covar_disc = c("SEX"),
-#'             breaks = list(c(16,30,50,65,120)))
+#' 
+#' 
+#' # count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
+#' #             covar_cont = c("AGE"), covar_disc = c("SEX"),
+#' #             breaks = list(c(16,30,50,65,120)))
+#'             
 
-
-# 79: -------------------------------------------------------------------------
 count_cases = function(data, drug.case = drug.case, drug.control = NULL,
                        covar_disc = NULL, covar_cont = NULL, breaks = NULL,
                        cores = detectCores(), min_AE = 10){
+  . <- "Muted"
   data = as_tibble(data) 
   ## check the breaks-covar_cont pairs
   if(!length(breaks) == length(covar_cont)){

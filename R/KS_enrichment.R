@@ -50,6 +50,7 @@
 KS_enrichment = function(data, drug.case, drug.control = NULL, covar = NULL,
                          dd.group, n_perms = 1000, p = 0, zero = FALSE,
                          min_size = 5, min_AE = 10, cores = detectCores()){
+  i <- "Muted"
   ## check p is between 0 and 1
   if(p > 1 | p < 0){
     stop("P should take any value between 0 and 1")

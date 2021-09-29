@@ -45,6 +45,8 @@
 # 79: -------------------------------------------------------------------------
 odds_ratio = function(data, drug.case, drug.control = NULL, covar = NULL,
                       min_AE = 10, cores = detectCores()){
+  i <- "Muted"
+  . <- "Muted"
   data = as_tibble(data)
   if(!is.null(covar)){
     if(!all(covar %in% names(data))){

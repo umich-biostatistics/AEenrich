@@ -21,7 +21,7 @@
 ###                   Infections       0.46
 # 79: -------------------------------------------------------------------------
 get_ES = function(dd.group, data_Ratio, p, zero){
-  
+  . <- "Muted"
   # add zero to AE if it was not mentioned with the target vaccine
   ddF = data_Ratio %>%
     right_join(dd.group, by = "AE_NAME") %>%

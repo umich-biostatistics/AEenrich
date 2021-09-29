@@ -65,29 +65,31 @@
 #' 
 #' @examples
 #' 
+#' \donttest{
 #'# AEKS
 #'
-#'## Type I data: data on report level
-#'enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aeks",
-#'       n_perms = 1000, drug.case = "COVID19", dd.group = group,
-#'       drug.control = "OTHER", min_size = 5, min_AE = 10, zero = FALSE)
+#'### Type I data: data on report level
+#'# enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aeks",
+#'#        n_perms = 1000, drug.case = "COVID19", dd.group = group, cores = 2,
+#'#        drug.control = "OTHER", min_size = 5, min_AE = 10, zero = FALSE)
 #'       
 #'## Type II data: aggregated data
-#'enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aeks",
-#'       n_perms = 1000, drug.case = "DrugYes", dd.group = group,
-#'       drug.control = "DrugNo", min_size = 5, min_AE = 10)
+#'# enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aeks",
+#'#        n_perms = 1000, drug.case = "DrugYes", dd.group = group, cores = 2,
+#'#        drug.control = "DrugNo", min_size = 5, min_AE = 10)
 #'       
 #'# AEFISHER
 #'## Type I data: data on report level
-#'enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
-#'       n_perms = 1000, drug.case = "COVID19", dd.group = group,
-#'       drug.control = "OTHER", min_size = 5, min_AE = 10, q.cut = 0.05, 
-#'       or.cut = 1.5, cores = 8)
+#'# enrich(data = covid1, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
+#'#        n_perms = 1000, drug.case = "COVID19", dd.group = group,
+#'#        drug.control = "OTHER", min_size = 5, min_AE = 10, q.cut = 0.05, 
+#'#        or.cut = 1.5, cores = 2)
 #'       
 #'## Type II data: aggregated data
-#'enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
-#'       n_perms = 1000, drug.case = "DrugYes", dd.group = group,
-#'       drug.control = "DrugNo", min_size = 5, min_AE = 10)
+#'# enrich(data = covid2, covar = c("SEX", "AGE"), p = 0, method = "aefisher",
+#'#        n_perms = 1000, drug.case = "DrugYes", dd.group = group,
+#'#        drug.control = "DrugNo", min_size = 5, min_AE = 10, cores = 2)
+#'       }
 
 
 
