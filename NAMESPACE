@@ -1,5 +1,6 @@
 
 export(enrich)
+export(count_cases)
 importFrom(magrittr, `%>%`)
 importFrom("dplyr", "arrange", "coalesce", "desc", "distinct", "filter",
            "mutate", "n", "summarise", "summarize", "transmute", "ungroup", 
