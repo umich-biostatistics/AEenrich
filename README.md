@@ -3,7 +3,7 @@
 
 # R package `AEenrich`
 
-[![](https://img.shields.io/badge/devel%20version-1.0.0-blue.svg)](https://github.com/umich-biostatistics/AEenrich)
+[![](https://img.shields.io/badge/devel%20version-1.1.0-blue.svg)](https://github.com/umich-biostatistics/AEenrich)
 [![](https://img.shields.io/github/languages/code-size/umich-biostatistics/AEenrich.svg)](https://github.com/umich-biostatistics/AEenrich)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/AEenrich?color=blue)](https://cran.r-project.org/package=AEenrich)
 [![](http://cranlogs.r-pkg.org/badges/last-month/AEenrich?color=green)](https://cran.r-project.org/package=AEenrich)
@@ -13,12 +13,13 @@ checks](https://cranchecks.info/badges/summary/AEenrich)](https://cran.r-project
 
 ## Overview
 
-Perform Adverse Event Enrichment Tests. The enrich function is used to
-perform Adverse event (AE) enrichment analysis. Unlike the continuous
-gene expression data, AE data are counts. Therefore, AE data has many
-zeros and ties. We propose two enrichment tests. AEFisher is a modified
-Fisher’s exact test based on pre-selected significant AEs, while AEKS is
-based on a modified Kolmogorov-Smirnov statistic.
+We extend existing gene enrichment tests to perform adverse event
+enrichment analysis. Unlike the continuous gene expression data, adverse
+event data are counts. Therefore, adverse event data has many zeros and
+ties. We propose two enrichment tests. One is a modified Fisher’s exact
+test based on pre-selected significant adverse events, while the other
+is based on a modified Kolmogorov-Smirnov statistic. We add covariate
+adjustment to improve the analysis.
 
 ## Install from CRAN
 
