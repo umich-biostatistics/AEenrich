@@ -1,6 +1,12 @@
 
 #' Perform Adverse Event Enrichment Tests
 #' 
+#' The enrich function is used to perform Adverse event (AE) enrichment analysis.
+#' Unlike the continuous gene expression data, AE data are counts. Therefore,
+#' AE data has many zeros and ties. We propose two enrichment tests. AEFisher is
+#' a modified Fisher's exact test based on pre-selected significant AEs, while
+#' AEKS is based on a modified Kolmogorov-Smirnov statistic.
+#' 
 #' @param data a data.frame. Two data types are allowed. Type I data consisting
 #' data on the report level, having ID, Drug type and AE name as the first 3
 #' columns with covariates(optional) followed. Type II data have drug type and

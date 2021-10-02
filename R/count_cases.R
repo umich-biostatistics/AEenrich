@@ -1,6 +1,9 @@
 
 #' Convert data on the report level to aggregated data.
 #' 
+#' The count_cases function is used to convert data on the report
+#' level to aggregated data, grouping by specified covariates.
+#' 
 #' @param data a data.frame with at least 3 columns, consisting data on the report
 #' level, having ID, Drug type and AE name as the first 3 columns with
 #' covariates(optional) followed. The order of columns is not interchangeable.
@@ -31,7 +34,6 @@
 #' }
 #' 
 #' @examples
-#' 
 #' 
 #' # count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
 #' #             covar_cont = c("AGE"), covar_disc = c("SEX"),
@@ -164,7 +166,7 @@ count_cases = function(data, drug.case = drug.case, drug.control = NULL,
   return(results)
 }
 
-#' @description The Count_cases function is used to convert data on the report
+#' @description The count_cases function is used to convert data on the report
 #' level to aggregated data, grouping by specified covariates.
 #' 
 #' Use the function `count_cases` to convert report level data into aggregated data.
