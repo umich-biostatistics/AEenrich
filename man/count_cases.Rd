@@ -54,10 +54,10 @@ The returned data.frame contains the following columns:
 }
 }
 \description{
-Convert data on the report level to aggregated data.
+The count_cases function is used to convert data on the report
+level to aggregated data, grouping by specified covariates.
 }
 \examples{
-
 
 # count_cases(data = covid1, drug.case = "COVID19", drug.control = "OTHER",
 #             covar_cont = c("AGE"), covar_disc = c("SEX"),

@@ -6,7 +6,7 @@
 \alias{AEenrich-package}
 \title{AEenrich: Adverse Event Enrichment Tests}
 \description{
-The Count_cases function is used to convert data on the report
+The count_cases function is used to convert data on the report
 level to aggregated data, grouping by specified covariates.
 
 Use the function \code{count_cases} to convert report level data into aggregated data.
