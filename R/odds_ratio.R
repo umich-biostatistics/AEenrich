@@ -45,8 +45,6 @@
 # 79: -------------------------------------------------------------------------
 odds_ratio = function(data, drug.case, drug.control = NULL, covar = NULL,
                       min_AE = 10, cores = detectCores()){
-  i <- "Muted"
-  . <- "Muted"
   data = as_tibble(data)
   if(!is.null(covar)){
     if(!all(covar %in% names(data))){
@@ -164,10 +162,8 @@ odds_ratio = function(data, drug.case, drug.control = NULL, covar = NULL,
       ) %dopar% {
         AE = AE_SET[i]
         data_count = data_comp %>%
-          filter(AE_NAME == {{AE}}) %>%
-          mutate(YES = YES + 1,
-                 NO = NO + 1)
-      
+          filter(AE_NAME == {{AE}})
+        
         covar_formula = ifelse(is.null(covar), "",
                                paste("+", paste(covar, collapse = " + ")))
       
