@@ -45,7 +45,7 @@ for a specific AE. Default 10.}
 A \strong{data.frame} consists of aggregated data.
 
 The returned data.frame contains the following columns:
-\itemize{
+\describe{
 \item{DRUG_TYPE: }{type of the drug, DrugYes for target drug and DrugNo for referenced drug}
 \item{AE_NAME: }{the name of the adverse event}
 \item{AEyes: }{number of observations that have this AE}
