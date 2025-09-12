@@ -71,7 +71,7 @@ for a specific AE.}
 A list containing 2 data.frames named \strong{Final_result} and \strong{AE_info}.
 
 The \strong{Final_result} data.frame contains the following columns:
-\itemize{
+\describe{
 \item{GROUP_NAME: }{AE group names}
 \item{ES: }{enrichment score}
 \item{p_value: }{p value of the enrichment test}
@@ -79,7 +79,7 @@ The \strong{Final_result} data.frame contains the following columns:
 }
 
 The \strong{AE_info} contains the following columns:
-\itemize{
+\describe{
 \item{AE_NAME: }{AE names}
 \item{OR: }{odds ratio for each individual AE}
 \item{p_value: }{p value for AE-drug association}
