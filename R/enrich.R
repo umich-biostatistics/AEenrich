@@ -39,7 +39,7 @@
 #' for a specific AE.
 #' @param cores the number of cores to use for parallel execution.
 #' @references Li, S. and Zhao, L. (2020). Adverse event enrichment tests using 
-#' VAERS. \href{https://arxiv.org/abs/2007.02266}{arXiv:2007.02266}.
+#' VAERS. \href{https://doi.org/10.48550/arXiv.2007.02266}{arXiv:2007.02266}.
 #' 
 #' Subramanian, A.e.a. (2005). Gene set enrichment analysis: a knowledge-based
 #' approach for interpreting genome-wide expression profiles. Proc Natl Acad

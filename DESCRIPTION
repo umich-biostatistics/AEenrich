@@ -1,5 +1,5 @@
 Package: AEenrich
-Version: 1.1.0
+Version: 1.1.1
 Title: Adverse Event Enrichment Tests
 Type: Package
 Description: We extend existing gene enrichment tests to perform adverse
@@ -9,7 +9,7 @@ Description: We extend existing gene enrichment tests to perform adverse
     test based on pre-selected significant adverse events, while the other is
     based on a modified Kolmogorov-Smirnov statistic. We add Covariate
     adjustment to improve the analysis."Adverse event enrichment tests using
-    VAERS" Shuoran Li, Lili Zhao (2020) <arXiv:2007.02266>.
+    VAERS" Shuoran Li, Lili Zhao (2020) <doi:10.48550/arXiv.2007.02266>.
 Authors@R: c(
     person(given = "Shuoran", family = "Li", role = c("aut"), email = "shuoranl@umich.edu"),
     person(given = "Hongfan", family = "Chen", role = c("aut"), email = "chenhf@umich.edu"),
