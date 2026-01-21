@@ -5,18 +5,17 @@
 \alias{group}
 \title{Group Structure Data}
 \format{
-An object of class \code{NULL} of length 0.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 35339 rows and 2 columns.
 }
 \usage{
 group
 }
+\value{
+A data frame with the following columns:
+\item{AE_NAME}{Adverse event name}
+\item{GROUP_NAME}{Group name}
+}
 \description{
 Identifies which group each set of adverse events belongs.
-}
-\details{
-\itemize{
-\item AE_NAME Adverse event name
-\item GROUP_NAME Group name
-}
 }
 \keyword{datasets}

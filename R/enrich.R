@@ -124,15 +124,14 @@ enrich = function(data, dd.group, drug.case, drug.control = NULL,
   }
 }
 
-#' @description Perform Adverse Event Enrichment Tests
-#' The enrich function is used to perform Adverse event (AE) enrichment analysis.
-#' Unlike the continuous gene expression data, AE data are counts. Therefore,
-#' AE data has many zeros and ties. We propose two enrichment tests. AEFisher is
-#' a modified Fisher's exact test based on pre-selected significant AEs, while
-#' AEKS is based on a modified Kolmogorov-Smirnov statistic.
-#' 
-#' Use the function `enrich` to fit models and inspect results.
-#' 
-#' See our \href{https://github.com/umich-biostatistics/AEenrich}{Github home page} 
-#' or run ?enrich for examples.
+#' @description
+#' Perform adverse event enrichment tests. The \code{enrich} function implements
+#' enrichment analysis for adverse event count data, which contain many zeros and
+#' ties. Two methods are provided: \code{AEFisher}, a modified Fisher’s exact test
+#' based on pre-selected significant adverse events, and \code{AEKS}, a modified
+#' Kolmogorov–Smirnov statistic. See the GitHub home page at
+#' \url{https://github.com/umich-biostatistics/AEenrich} or run \code{?enrich} for
+#' examples.
 "_PACKAGE"
+
+utils::globalVariables(c(".", "i"))

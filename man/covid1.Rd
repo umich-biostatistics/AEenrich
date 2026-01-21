@@ -10,17 +10,16 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \usage{
 covid1
 }
+\value{
+A data frame with the following columns:
+\item{VAERS_ID}{Event ID}
+\item{VAX_LABEL}{Vaccine type}
+\item{AE_NAME}{Adverse event name}
+\item{AGE}{Covariate}
+\item{SEX}{Covariate}
+}
 \description{
 Adverse event data in the long format. Each row is a single adverse
 event, along with covariates.
-}
-\details{
-\itemize{
-\item VAERS_ID Event ID
-\item VAX_LABEL Vaccine type
-\item AE_NAME Adverse event name
-\item AGE covariate
-\item SEX covariate
-}
 }
 \keyword{datasets}

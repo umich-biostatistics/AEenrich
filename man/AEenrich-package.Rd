@@ -2,29 +2,22 @@
 % Please edit documentation in R/count_cases.R, R/enrich.R
 \docType{package}
 \name{AEenrich-package}
-\alias{AEenrich}
 \alias{AEenrich-package}
 \title{AEenrich: Adverse Event Enrichment Tests}
 \description{
-The count_cases function is used to convert data on the report
-level to aggregated data, grouping by specified covariates.
+The count_cases function converts report-level data into aggregated data by
+grouping on specified covariates. Use \code{count_cases} to summarize adverse
+event reports into analysis-ready tables. See the GitHub home page at
+\url{https://github.com/umich-biostatistics/AEenrich} or run \code{?count_cases}
+for examples.
 
-Use the function \code{count_cases} to convert report level data into aggregated data.
-
-See our \href{https://github.com/umich-biostatistics/AEenrich}{Github home page}
-or run ?count_cases for examples.
-
-Perform Adverse Event Enrichment Tests
-The enrich function is used to perform Adverse event (AE) enrichment analysis.
-Unlike the continuous gene expression data, AE data are counts. Therefore,
-AE data has many zeros and ties. We propose two enrichment tests. AEFisher is
-a modified Fisher's exact test based on pre-selected significant AEs, while
-AEKS is based on a modified Kolmogorov-Smirnov statistic.
-
-Use the function \code{enrich} to fit models and inspect results.
-
-See our \href{https://github.com/umich-biostatistics/AEenrich}{Github home page}
-or run ?enrich for examples.
+Perform adverse event enrichment tests. The \code{enrich} function implements
+enrichment analysis for adverse event count data, which contain many zeros and
+ties. Two methods are provided: \code{AEFisher}, a modified Fisher’s exact test
+based on pre-selected significant adverse events, and \code{AEKS}, a modified
+Kolmogorov–Smirnov statistic. See the GitHub home page at
+\url{https://github.com/umich-biostatistics/AEenrich} or run \code{?enrich} for
+examples.
 }
 \seealso{
 Useful links:
@@ -42,16 +35,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Michael Kleinsasser \email{mkleinsa@umich.edu}
-
-Authors:
-\itemize{
-  \item Shuoran Li \email{shuoranl@umich.edu}
-  \item Hongfan Chen \email{chenhf@umich.edu}
-  \item Lili Zhao \email{zhaolili@med.umich.edu}
-}
-
-
 \strong{Maintainer}: Michael Kleinsasser \email{mkleinsa@umich.edu}
 
 Authors:

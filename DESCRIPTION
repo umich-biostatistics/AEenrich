@@ -34,7 +34,7 @@ Imports:
 biocViews: 
 URL: https://github.com/umich-biostatistics/AEenrich
 BugReports: https://github.com/umich-biostatistics/AEenrich/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Suggests: 
     testthat

@@ -166,11 +166,10 @@ count_cases = function(data, drug.case = drug.case, drug.control = NULL,
   return(results)
 }
 
-#' @description The count_cases function is used to convert data on the report
-#' level to aggregated data, grouping by specified covariates.
-#' 
-#' Use the function `count_cases` to convert report level data into aggregated data.
-#' 
-#' See our \href{https://github.com/umich-biostatistics/AEenrich}{Github home page} 
-#' or run ?count_cases for examples.
+#' @description
+#' The count_cases function converts report-level data into aggregated data by
+#' grouping on specified covariates. Use \code{count_cases} to summarize adverse
+#' event reports into analysis-ready tables. See the GitHub home page at
+#' \url{https://github.com/umich-biostatistics/AEenrich} or run \code{?count_cases}
+#' for examples.
 "_PACKAGE"
